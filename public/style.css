@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Bogart';
+  src: url('./fonts/Bogart-Semibold.woff2') format('woff2'),
+      url('./fonts/Bogart-Semibold.woff') format('woff'),
+      url('./fonts/Bogart-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('./fonts/OpenSans-Regular.ttf') format('truetype');
+}
