@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react'
+import { Switch } from 'react-router-dom'
+import PrivateLayout from './layouts/PrivateLayout/'
+import PublicRouteComponent from './layouts/PublicLayout/'
+import DashboardPage from './pages/DashboardPage'
+import ResultPage from './pages/ResultPage'
+import LoginPage from './pages/LoginPage'
+import SignUpPage from './pages/SignUpPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Fragment>
+    <Switch>
+      <PublicRouteComponent exact path='/login' component={LoginPage} />
+      <PublicRouteComponent exact path='/signup' component={SignUpPage} />
+      <PrivateLayout exact path='/' component={DashboardPage} />
+      <PrivateLayout exact path='/result' component={ResultPage} />
+    </Switch>
+  </Fragment>
+)
 
-export default App;
+export default App
